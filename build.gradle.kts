@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm") version "1.8.20"
 }
 
-group = "org.example"
+group = "com.daisuzz"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    implementation("io.arrow-kt:arrow-core:1.2.0-RC")
+    implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0-RC")
     testImplementation(kotlin("test"))
 }
 
@@ -18,5 +20,5 @@ tasks.test {
 }
 
 kotlin {
-    jvmToolchain(8)
+    jvmToolchain(17)
 }
