@@ -1,15 +1,14 @@
 package enum
 
-import java.util.*
+import java.util.EnumSet
 
 fun main() {
     val enum = Sample.A
-    val map = run((enum as Enum<*>)::class.java)
+    val map = map((enum as Enum<*>)::class.java)
     println(map.values.map { it.ordinal })
 }
 
 
-fun <E : Enum<E>> run(clazz: Class<E>): Map<String, E> {
-    println(clazz)
+fun <E : Enum<E>> map(clazz: Class<E>): Map<String, E> {
     return EnumSet.allOf(clazz).associateBy { it.name }
 }
